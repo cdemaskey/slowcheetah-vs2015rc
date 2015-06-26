@@ -74,11 +74,11 @@
     </Compile>
     <None Include="App.Debug.config">
       <DependentUpon>App.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
+      <TransformOnBuild>True</TransformOnBuild>
     </None>
     <None Include="App.Release.config">
       <DependentUpon>App.config</DependentUpon>
-      <IsTransformFile>True</IsTransformFile>
+      <TransformOnBuild>True</TransformOnBuild>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -93,7 +93,9 @@
     <None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <TransformOnBuild>True</TransformOnBuild>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" Label="SlowCheetah" />
